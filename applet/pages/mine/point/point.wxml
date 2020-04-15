@@ -1,0 +1,132 @@
+<!-- 弹出层：授权 -->
+<import src="../../../templates/login/login.wxml" />
+<view class="padding bg-white">
+    <view class="text-center">我的积分总数</view>
+    <view class="padding-xs text-center text-red text-sl">{{totalPoints}}</view>
+    <view class="text-sm text-center">
+        <text class="cuIcon-time text-sm text-right"></text>
+        <text bindtap="showUsingDetail">积分明细</text>
+        <text class="cuIcon-question padding-left-xs text-sm text-right"></text>
+        <text bindtap="showPointDesc">积分说明</text>
+    </view>
+</view>
+<view class="margin-top-sm bg-white">
+    <view class="text-left text-black text-bold text-xl padding">做任务，得积分</view>
+    <!-- <view class="flex solid-bottom align-center margin-left margin-right ">
+        <view class="flex-sub margin-xs bg-gradual-orange signbanner shadow-blur radius point-task">
+            50积分
+        </view>
+        <view class="flex-twice margin-xs">
+            <view>观看完整视频</view>
+            <view class="text-sm text-red">+50积分/次</view>
+        </view>
+        <view class="flex-treble margin-xs text-right">
+            <button class="cu-btn round bg-orange shadow" bindtap="clickVideoTask">立即观看</button>
+        </view>
+    </view> -->
+    <view class="flex solid-bottom align-center margin-left margin-right ">
+        <view class="flex-sub margin-xs bg-gradual-orange signbanner shadow-blur radius point-task">
+            30积分
+        </view>
+        <view class="flex-twice margin-xs">
+            <view>今日签到</view>
+            <view class="text-sm text-red">最高+30积分/天</view>
+        </view>
+        <view class="flex-treble margin-xs text-right">
+            <button bindtap="clickSigned" class="cu-btn round {{signed==1?'bg-grey':'bg-orange'}} shadow">
+                {{signBtnTxt}}
+            </button>
+        </view>
+    </view>
+    <!--
+    <view class="flex solid-bottom align-center margin-left margin-right padding-bottom ">
+        <view class="flex-sub margin-xs bg-gradual-orange signbanner shadow-blur radius point-task">
+            VIP
+        </view>
+        <view class="flex-twice margin-xs">
+            <view>成为永久会员</view>
+            <view class="text-sm text-red">拒绝看广告</view>
+        </view>
+        <view class="flex-treble margin-xs text-right">
+            <button bindtap='clickVip' class="cu-btn round {{isVip?'bg-grey':'bg-orange'}} shadow">
+                {{isVip?'已经是啦':'立即申请'}}
+            </button>
+        </view>
+    </view>-->
+</view>
+<view class="margin-top-sm bg-white">
+    <view class="text-left text-black text-bold text-xl padding">邀请好友，得积分</view>
+    <view class="text-center ">
+        每邀请一位新用户，可获得
+        <text class="text-red">100</text>
+        积分
+    </view>
+    <view class="flex solid-bottom padding justify-between">
+        <view class="margin-xs" wx:for="{{shareList}}" wx:key="idx" wx:for-index="idx" wx:for-item="item">
+            <view class="cu-avatar lg round {{item.bgUrl}}" style="{{item.style}}">
+                <text class="{{item.icon}} lg text-gray"></text>
+            </view>
+            <view class="text-center text-sm">{{item.nickName}}</view>
+        </view>
+    </view>
+    <view class="text-center padding-bottom">
+        <button open-type="share" class="cu-btn btn-width round bg-gradual-orange signbanner shadow-blur shadow">
+            立即邀请
+        </button>
+    </view>
+</view>
+<view wx:if="{{showBanner}}" class="cu-item margin-top-sm">
+    <view class="content padding-right-xs padding-left-xs">
+        <ad unit-id="{{showBannerId}}" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"></ad>
+    </view>
+</view>
+<!-- vip窗口 -->
+<view class="cu-modal {{showVIPModal?'show':''}}">
+    <view class="cu-dialog">
+        <view class="cu-bar bg-white justify-end">
+            <view class="content">成为VIP说明</view>
+            <view class="action" bindtap="hideModal">
+                <text class="cuIcon-close text-red"></text>
+            </view>
+        </view>
+        <view class="padding-xl bg-white">
+            <view>申请条件：打赏过作者的用户即可申请</view>
+            <view>VIP权益：待作者开发中</view>
+        </view>
+        <view class="cu-bar bg-white">
+            <view class="action margin-0 flex-sub " bindtap="hideModal">取消</view>
+            <view class="action margin-0 flex-sub text-green solid-left" bindtap="showMoneryUrl">
+                打赏
+            </view>
+            <view class="action margin-0 flex-sub text-green solid-left" bindtap="applyVip">
+                申请
+            </view>
+        </view>
+    </view>
+</view>
+<!-- 积分说明窗口 -->
+<view class="cu-modal {{showPointDescModal?'show':''}}">
+    <view class="cu-dialog">
+        <view class="cu-bar bg-white justify-end">
+            <view class="content">积分说明</view>
+            <view class="action" bindtap="hidePointDesc">
+                <text class="cuIcon-close text-red"></text>
+            </view>
+        </view>
+        <view class="padding-xl bg-white">
+            <view class="padding-sm text-xl text-black text-bold text-center">如何获取积分</view>
+            <view class="text-left">1、坚持签到，连续签到可获得相应的签到积分，最高30</view>
+            <view class="text-left">2、观看视频，每次可获得50积分</view>
+            <view class="text-left">3、邀请好友，最高每天可得100积分</view>
+            <view class="padding-sm text-xl text-black text-bold text-center">积分的作用</view>
+            <view class="text-left">1、积累一定的积分可向作者兑换相应的礼品「待作者想想」</view>
+            <view class="text-left">2、后续小程序中提供的福利</view>
+        </view>
+        <view class="cu-bar bg-white">
+            <view class="action margin-0 flex-sub text-green solid-left" bindtap="hidePointDesc">
+                我知道了
+            </view>
+        </view>
+    </view>
+</view>
+<template is="login" data="{{showLogin: showLogin}}"></template>

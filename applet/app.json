@@ -1,0 +1,66 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/album/album",
+    "pages/album/albumlist/albumlist",
+
+    "pages/detail/detail",
+    "pages/detail/original",
+
+    "pages/admin/index",
+    "pages/admin/articleList/articleList",
+    "pages/admin/labelList/labelList",
+    "pages/admin/comment/comment",
+    "pages/admin/classify/classify",
+    "pages/admin/member/member",
+    "pages/admin/subscribe/subscribe",
+    "pages/admin/advert/advert",
+
+    "pages/mine/mine",
+    "pages/mine/notice/notice",
+    "pages/mine/release/release",
+    "pages/mine/sign/sign",
+    "pages/mine/point/point",
+    "pages/mine/collection/collection",
+    "pages/mine/point/pointDetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "顶格",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#959394",
+    "selectedColor": "#1296db",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/images/tab/home.png",
+        "selectedIconPath": "/images/tab/home_active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/album/album",
+        "iconPath": "/images/tab/album.png",
+        "selectedIconPath": "/images/tab/album_active.png",
+        "text": "专题"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "/images/tab/mine.png",
+        "selectedIconPath": "/images/tab/mine_clicked.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "plugins": {
+    "htmltowxml": {
+      "version": "1.4.0",
+      "provider": "wxa51b9c855ae38f3c"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

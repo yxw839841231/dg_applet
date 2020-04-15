@@ -1,0 +1,15 @@
+<view class="cu-list menu card-menu margin-top" wx:for="{{classifyList}}"
+ wx:key="idx" wx:for-index="idx" wx:for-item="item"  id="{{item.slug}}" 
+ data-tname="{{item.slug}}" data-image="{{item.thumbnail}}" bindtap='openTopicPosts'>
+    <view class="cu-item">
+        <view class="content padding-tb-sm">
+            <view>
+                <text class="cuIcon-title text-orange "></text>
+                {{item.name}}
+            </view>
+            <view class="text-gray text-sm">
+                {{item.description}}
+            </view>
+        </view>
+    </view>
+</view>

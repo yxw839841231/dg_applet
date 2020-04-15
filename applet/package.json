@@ -1,0 +1,23 @@
+{
+    "name": "dg-applet",
+    "version": "1.0.0",
+    "description": "顶格博客，基于云原生，兼容halo博客",
+    "main": "index.js",
+    "dependencies": {
+        "wxa-plugin-canvas": "^1.1.12"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://gitee.com/zjoin/dg_applet.git"
+    },
+    "author": "顶格博客",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://www.dgjava.com"
+    },
+    "homepage": "https://gitee.com/zjoin/dg_applet.git#readme"
+}
