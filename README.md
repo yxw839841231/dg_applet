@@ -2,7 +2,7 @@
 
 [博客web地址](https://www.dgjava.com)
 ![小程序预览](https://image.dgjava.com/xcx50_1586744365757.jpg-zjoin.image)
-
+[码云地址](https://gitee.com/zjoin/dg_applet)
 
 #### 介绍
 微信博客小程序，完美兼容halo博客客户端。
