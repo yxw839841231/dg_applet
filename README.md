@@ -3,28 +3,20 @@
 #### 介绍
 微信博客小程序，完美兼容halo博客客户端。
 
-#### 软件架构
-软件架构说明
-
-
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
+1.  如果你已经有了基于halo的博客，那么恭喜你，可以直接更换域名，配置token即可运行且看到效果；
+2.  如果没有，那么你可以前往halo的代码下载最新开发包本地安装，然后配置localhost:端口即可;
 3.  xxxx
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+安装部署已经源码说明，会统一更新在[顶格博客](https://www.dgjava.com/categories/dgmini)
 
 #### 参与贡献
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+1.  后端内容客户端源于halo博客，原生支持，可做定制化；
+2.  前端源于[WeHalo](https://gitee.com/Aquan_LeRou/WeHalo)和[mini_blog](https://gitee.com/linyingnan/mini-blog?_from=gitee_search) 特此鸣谢！
 
 
 #### 码云特技
